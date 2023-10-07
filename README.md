@@ -178,25 +178,60 @@ Paste the link you copied in the search bar and press the Enter key.
 We will now install and enable IIS
 
 <p align="center">
-<img src="https://i.imgur.com/rk6m5EW.png" height="80%" width="80%" alt="img"/>
+<img src="https://i.imgur.com/xvSMNcH.png" height="80%" width="80%" alt="img"/>
 </p>
 
-NOTE: Internet Information Services (IIS) is a web server created by Microsoft that can be used to host a wide variety of websites and web applications.
+NOTE: Internet Information Services (IIS) is a web server that osTicket runs on. IIS is created by Microsoft that and can be used to host a wide variety of websites and web applications.
 
+Right-click the Start Menu and click "Run".
 
+<p align="center">
+<img src="https://i.imgur.com/jXSncgO.png" height="80%" width="80%" alt="img"/>
+</p>
 
+Type "control" and click the "Ok" button.
 
+<p align="center">
+<img src="https://i.imgur.com/PArDvYE.png" height="80%" width="80%" alt="img"/>
+</p>
 
+Click "Programs".
 
+<p align="center">
+<img src="https://i.imgur.com/x2YcYev.png" height="80%" width="80%" alt="img"/>
+</p>
 
+Click "Turn Windows features on or off".
 
+<p align="center">
+<img src="https://i.imgur.com/yxo745J.png" height="80%" width="80%" alt="img"/>
+</p>
 
+Scroll to "Internet Information Services" and check the box; click the plus (+) to expand it. Expand "World Wide Web Services", expand "Application Development Features", go ahead and check "CGI".
 
+<p align="center">
+<img src="https://i.imgur.com/UuVvmoH.png" height="80%" width="80%" alt="img"/>
+</p>
 
+Collaps "Application Development Features" and expand "Common HTTP Features". Make sure all the boxes are checked, and click the "Ok" button. 
 
+<p align="center">
+<img src="https://i.imgur.com/LZ7RzhM.png" height="80%" width="80%" alt="img"/>
+</p>
 
+The image above shows that the IIS web services are being installed.
 
+<p align="center">
+<img src="https://i.imgur.com/Qx022SW.png" height="80%" width="80%" alt="img"/>
+</p>
 
+IIS is now installed, click the "Close" button.
+
+<p align="center">
+<img src="https://i.imgur.com/Qx022SW.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Let's confirm that IIS is installed on our VM. Open Microsoft Edge and search for "127.0.0.1"
 
 
 
