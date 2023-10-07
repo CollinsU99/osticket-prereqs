@@ -14,7 +14,7 @@ This tutorial provides a step-by-step guide to installing osTicket, an open-sour
 
 <h2>Operating Systems Used </h2>
 
-- Windows 10 (21H2)
+- Windows 10 Pro (22H2)
 
 <h2>osTicket Installation Files</h2>
 
@@ -24,7 +24,7 @@ https://drive.google.com/drive/folders/1mKAD1ZaP1e3F0FInXuAlQ3Pcucz4Mb3O?usp=sha
 
  - Create a Resource Group
  - Create an Azure Virtual Machine
- - Enable IIS
+ - Install and enable IIS (Internet Information Services)
  - HeidiSQL
  - MySQL
  - OsTicket
@@ -106,8 +106,82 @@ The "Validation is in progress" message indicates that the Virtual machine is be
 The message "Your deployment is complete" means that the Azure virtual machine (VM) has been successfully created and configured.
 
 <p align="center">
-<img src="https://i.imgur.com/BZxxbil.png" height="80%" width="80%" alt="img"/>
+<img src="https://i.imgur.com/oV6Qwyj.png" height="80%" width="80%" alt="img"/>
 </p>
+
+Click the search bar, and click "Virtual machines".
+
+<p align="center">
+<img src="https://i.imgur.com/O8O0QBq.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click the virtual machine we just created.
+
+<p align="center">
+<img src="https://i.imgur.com/wGfGhSB.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Copy the Public IP address.
+
+<p align="center">
+<img src="https://i.imgur.com/gChFsZc.png" height="80%" width="80%" alt="img"/>
+</p>
+
+On your local computer search box, search for "remote desktop", and click "Open"
+
+<p align="center">
+<img src="https://i.imgur.com/dDYXiBF.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Paste your VMs Public IP address you copied and click the "Connect" button.
+
+<p align="center">
+<img src="https://i.imgur.com/neUPf5p.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "More choices" > "Use a different account", go ahead and login with the username and password you used when you created your virtual machine, and click "Ok". 
+
+<p align="center">
+<img src="https://i.imgur.com/2ZPAvQj.png" height="80%" width="80%" alt="img"/>
+</p>
+
+We've now loged into our virtual machine. Select "No" for the options and click the "Accept" button.
+
+<p align="center">
+<img src="https://i.imgur.com/eRw8ia9.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Select the "Yes" button.
+
+Copy this link https://drive.google.com/drive/folders/1mKAD1ZaP1e3F0FInXuAlQ3Pcucz4Mb3O?usp=sharing 
+
+This link contains all the installation files we will need. We will open it up inside the virtual machine because it's much easier to deal with there.
+
+<p align="center">
+<img src="https://i.imgur.com/R9bRAnY.png" height="80%" width="80%" alt="img"/>
+</p>
+
+In your virtual machine, double-click the "Microsoft Edge" application to open it.
+
+<p align="center">
+<img src="https://i.imgur.com/ARKjwcV.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "Search without your data" > "Don't allow" > "Confirm and continue" > "Continue without this data" > "Confirm and start browsing". 
+
+<p align="center">
+<img src="https://i.imgur.com/rk6m5EW.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Paste the link you copied in the search bar and press the Enter key.
+
+We will now install and enable IIS
+
+<p align="center">
+<img src="https://i.imgur.com/rk6m5EW.png" height="80%" width="80%" alt="img"/>
+</p>
+
+NOTE: Internet Information Services (IIS) is a web server created by Microsoft that can be used to host a wide variety of websites and web applications.
 
 
 
