@@ -516,7 +516,7 @@ We are going to create a new connection to the database in this window.
 Click "New", type in your username and password (Password1), and click "Open". This is the password we used when we created the "MySQL Server".
 
 <p align="center">
-<img src="https://i.imgur.com/bFoGNDs.pn" height="80%" width="80%" alt="img"/>
+<img src="https://i.imgur.com/bFoGNDs.png" height="80%" width="80%" alt="img"/>
 </p>
 
 We are now connected to MySQL Server.
