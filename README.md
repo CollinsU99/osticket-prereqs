@@ -267,7 +267,7 @@ After it's downloaded, double-click "File Explore" in the taskbar.
 <img src="https://i.imgur.com/7b7NSYM.png" height="80%" width="80%" alt="img"/>
 </p>
 
-Click "Downloads" and double-click "PHPManagerForIIS_V1.5.0". PHPManagerForIIS_V1.5.0 installation window will pop up. Click "Next" > select "I Agree" and click "Next" > "Close".
+Click "Downloads" and double-click "PHPManagerForIIS_V1.5.0". PHPManagerForIIS_V1.5.0 installation window will pop up. Click "Next", select "I Agree" and click "Next" > "Close".
 
 Close File Explorer.
 
@@ -291,13 +291,38 @@ After it's downloaded, click "File Explore" in the taskbar. Double-click "rewrit
 <img src="https://i.imgur.com/CwWRA0w.png" height="80%" width="80%" alt="img"/>
 </p>
 
-Let's Create the "C\PHP" directory.
+Let's create the "C\PHP" directory.
 
-Open File Explorer, click "This PC", double-click "Windows C:" 
+Open File Explorer, click "This PC" and double-click "Windows C:". 
 
 <p align="center">
-<img src="https://i.imgur.com/CwWRA0w.png" height="80%" width="80%" alt="img"/>
+<img src="https://i.imgur.com/JbiNrb7.png" height="80%" width="80%" alt="img"/>
 </p>
+
+In "Windows C:", right-click on an empty space, click "New", click "Folder".
+
+<p align="center">
+<img src="https://i.imgur.com/glMjIz4.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Create a folder called "PHP"
+
+<p align="center">
+<img src="https://i.imgur.com/x53XakV.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Next let's download "php-7.3.8-nts-Win32-VC15-x86.zip".
+
+Dowload it just as we did for previous files.
+
+<p align="center">
+<img src="https://i.imgur.com/x53XakV.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Go back to File Explorer, and right-click "php-7.3.8-nts-Win32-VC15-x86.zip"
+
+
+
 
 
 
