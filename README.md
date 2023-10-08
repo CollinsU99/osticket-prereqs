@@ -460,7 +460,7 @@ Click "php_imap.dll", and click "Enable". Do the same for "php_intl.dll" and "ph
 Refresh the osTicket Installer web page and make sure some of the recommended extentions are marked green, like the image above.
 
 <p align="center">
-<img src="https://imgur.com/a/iUthwnD" height="80%" width="80%" alt="img"/>
+<img src="https://i.imgur.com/MUcoVdV.png" height="80%" width="80%" alt="img"/>
 </p>
 
 Open File Explorer, click "This PC", double-click "Windows C:" > "inetpub" > "wwwroot" > "osTicket" > "include". Rename "ost-sampleconfig.php" to "ost-config.php"
