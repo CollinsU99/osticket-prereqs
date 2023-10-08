@@ -25,13 +25,15 @@ https://drive.google.com/drive/folders/1mKAD1ZaP1e3F0FInXuAlQ3Pcucz4Mb3O?usp=sha
  - Create a Resource Group
  - Create an Azure Virtual Machine
  - Install and enable IIS (Internet Information Services)
- - Downlaod and install "PHPManagerForIIS_V1.5.0.msi"
- - Download and install "rewrite_amd64_en-US.msi"
+ - Install "PHPManagerForIIS_V1.5.0.msi"
+ - Install "rewrite_amd64_en-US.msi"
  - Create the "C\PHP" directory
- - PHP Manager
- - php
- - Rewrite
- - VC_redist
+ - Extract "php-7.3.8-nts-Win32-VC15-x86.zip" to the "C\PHP" directory
+ - Install "VC_redist.x86.exe"
+ - Install "mysql-5.5.62-win32.msi"
+ - Register PHP from within IIS
+ - Install osTicket
+
 
 <h2>Installation Steps</h2>
 
@@ -316,10 +318,281 @@ Next let's download "php-7.3.8-nts-Win32-VC15-x86.zip".
 Dowload it just as we did for previous files.
 
 <p align="center">
-<img src="https://i.imgur.com/x53XakV.png" height="80%" width="80%" alt="img"/>
+<img src="https://i.imgur.com/NcnbWFZ.png" height="80%" width="80%" alt="img"/>
 </p>
 
-Go back to File Explorer, and right-click "php-7.3.8-nts-Win32-VC15-x86.zip"
+Go back to File Explorer and right-click "php-7.3.8-nts-Win32-VC15-x86.zip". Click "Extract All".
+
+<p align="center">
+<img src="https://i.imgur.com/v5ctOpy.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "Browse" > "This PC" and double-click "Windows C:", 
+
+<p align="center">
+<img src="https://i.imgur.com/QfA1eWV.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Select "PHP" by clicking it once. Click the "Select Folder" button.
+
+<p align="center">
+<img src="https://i.imgur.com/ULRSYUq.png" height="80%" width="80%" alt="img"/>
+</p>
+
+After selecting "PHP", click "Extract". Close File Explorer
+
+<p align="center">
+<img src="https://i.imgur.com/Ab8XqyG.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Next, let's download and install "VC_redist.x86.exe".
+
+NOTE: "VC_redist.x86.exe" provides C++ runtime libraries (libraries that provide basic functionality for C++ programs, such as memory management, input/output, and string manipulation) that are required for osTicket to run
+
+Go back to osTicket installation files web page and download "VC_redist.x86.exe". After it's downloaded, open File Explore, click on "Downloads", and double-click "VC_redist.x86.exe" to start the installation. Check the license agreement box and click "Install" > "Close".
+
+<p align="center">
+<img src="https://i.imgur.com/XcQxsWt.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Next, we will download and install "mysql-5.5.62-win32.msi". 
+
+Go back to osTicket installation files web page and download "mysql-5.5.62-win32.msi". Open File Explore, click on "Downloads", and double-click "mysql-5.5.62-win32.msi". Click "Next", check the license agreement box and click "Next" > "Typical install" > "Install" > "Finish".
+
+<p align="center">
+<img src="https://i.imgur.com/kN9pc0l.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Now, we will configure MySQL. Click "Next" > "Standard Configuration" > "Next" > "Next".
+
+Let's set up our root username and password. Our password will be "Password1". Click "Next" > "Execute" > "Finish".
+
+<p align="center">
+<img src="https://i.imgur.com/e4dJEyJ.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Let's register PHP from within IIS
+
+Search for "iis" in the search box, click "Run as administrator".
+
+<p align="center">
+<img src="https://i.imgur.com/lOf0OGk.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Double-click "PHP Manager".
+
+<p align="center">
+<img src="https://i.imgur.com/o3D5FBm.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "Register new PHP version" and click the three dots (...). Double-click "PHP"
+
+<p align="center">
+<img src="https://i.imgur.com/jS0jGP6.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Select "php-cgi", and click "Open" > "Ok".
+
+<p align="center">
+<img src="https://i.imgur.com/s7e5CeS.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Reload IIS Manager by clicking "vm-osticket" in the left pane, and click "Restart" in the right pane.
+
+<p align="center">
+<img src="https://i.imgur.com/khxs2mx.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Let's install osTicket. Go back to the osTicket Installation Files web page and download "osTicket-v1.15.8.zip".
+
+Open two File Explorer windows For the first window, double-click "This PC" > "Windows C:" > "inetpub" > "wwwroot".
+
+For the second window, click "Downloads", double-click "osTicket-v1.15.8", and drag the "upload" folder to the "wwwroot" folder in the first File Explorer window.
+
+<p align="center">
+<img src="https://i.imgur.com/YEM4gWa.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Let's rename the "upload" folder to "osTicket". 
+
+Right-click the "upload" folder and click "Rename".
+
+<p align="center">
+<img src="https://i.imgur.com/5OcDCzB.png" height="80%" width="80%" alt="img"/>
+</p>
+
+It has now been renamed "osTicket". Reload IIS like we did earlier.
+
+<p align="center">
+<img src="https://i.imgur.com/hGZjJPc.png" height="80%" width="80%" alt="img"/>
+</p>
+
+In IIS Manager, expand "Sites" > "Default Web Sites" and click "osTicket".
+
+<p align="center">
+<img src="https://i.imgur.com/G2Jbwjx.png" height="80%" width="80%" alt="img"/>
+</p>
+
+The osTicket installer web page will pop up.
+
+<p align="center">
+<img src="https://i.imgur.com/FWEQqm2.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Go back to IIS Manager. In "osTicket", double-click "PHP Manager".
+
+<p align="center">
+<img src="https://i.imgur.com/xVcDM8E.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "Enable or disable an extention".
+
+<p align="center">
+<img src="https://i.imgur.com/6aqTQCo.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "php_imap.dll", and click "Enable". Do the same for "php_intl.dll" and "php_opcache.dll".
+
+<p align="center">
+<img src="https://i.imgur.com/HFYozQP.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Refresh the osTicket Installer web page and make sure some of the recommended extentions are marked green, like the image above.
+
+<p align="center">
+<img src="https://imgur.com/a/iUthwnD" height="80%" width="80%" alt="img"/>
+</p>
+
+Open File Explorer, click "This PC", double-click "Windows C:" > "inetpub" > "wwwroot" > "osTicket" > "include". Rename "ost-sampleconfig.php" to "ost-config.php"
+
+<p align="center">
+<img src="https://i.imgur.com/uJN26pK.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Right-click "ost-config.php", and click "Properties".
+
+<p align="center">
+<img src="https://i.imgur.com/owJKXTl.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "Security" > "Advanced" > "Disable inheritance" > "Remove all inherited permissions from this object".
+
+<p align="center">
+<img src="https://i.imgur.com/pb2scVQ.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "Add" > "Select a principle", and type "Everyone" in the box. Click "Check Names" and click "Ok".
+
+<p align="center">
+<img src="https://i.imgur.com/WXR19cL.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Check "Full control" and click "Ok". 
+
+<p align="center">
+<img src="https://i.imgur.com/15bPhpW.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "Ok".
+
+<p align="center">
+<img src="https://i.imgur.com/kaLrzEi.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Go back to osTict Installation Files web page and download "HeidiSQL_12.3.0.6589_Setup.exe.docx".
+
+NOTE: "HeidiSQL_12.3.0.6589_Setup.exe.docx" allows us to connect to our SQL server.
+
+Go to "Downloads" folder and double-click HeidiSQL_12.3.0.6589_Setup" to install it.
+
+Select "I accept the agreement", and click "next" > "Next" > "Next" > "Next" > "Install" > "Finish" > "Skip". A new window will pop up.
+
+<p align="center">
+<img src="https://i.imgur.com/geYJqYI.png" height="80%" width="80%" alt="img"/>
+</p>
+
+We are going to create a new connection to the database in this window.
+
+Click "New", type in your username and password (Password1), and click "Open". This is the password we used when we created the "MySQL Server".
+
+<p align="center">
+<img src="https://i.imgur.com/bFoGNDs.pn" height="80%" width="80%" alt="img"/>
+</p>
+
+We are now connected to MySQL Server.
+
+<p align="center">
+<img src="https://i.imgur.com/mOqxUUC.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Let's go ahead and create a new database
+
+Right-click "Unamed" and click "Create new" > "Database" 
+
+<p align="center">
+<img src="https://i.imgur.com/09oU3t5.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Name your database "osTicket" and click "Ok".
+
+<p align="center">
+<img src="https://i.imgur.com/Zk5zNaq.png" height="80%" width="80%" alt="img"/>
+</p>
+
+As you can see from the image above, the osTicket database has now been created. Minimize the window
+
+<p align="center">
+<img src="https://i.imgur.com/e7Ilkyv.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Go back to the osTicket Installation web page and click "Continue". Fill in the information, and make sure you use "root" as your username and "Password1" as your password. Click "Install".
+
+<p align="center">
+<img src="https://i.imgur.com/I0c3qWC.png" height="80%" width="80%" alt="img"/>
+</p>
+
+osTicket has now been installed.
+
+<p align="center">
+<img src="https://i.imgur.com/tdj0ZE1.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Let's do some clean up. Open File Explorer, click "This PC", double-click "Windows C: > "inetpub" > "wwwroot" > "osTicket", right-click the "setup" folder, and click "delete".
+
+<p align="center">
+<img src="https://i.imgur.com/0VW416o.png" height="80%" width="80%" alt="img"/>
+</p>
+
+We will now set the permissions for the "ost-config.php" file to "Read only"
+
+Open File Explorer, click "This PC" and double-click "Windows C: > "inetpub" > "wwwroot" > "osTicket" > "include". Right-click "ost-config.php", and click "Properties".
+
+<p align="center">
+<img src="https://i.imgur.com/Lap4wOb.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "Security" > "Advanced", and select Everyone. Click "Edit", uncheck "Full control, Modify, Write", and click "Ok".
+
+<p align="center">
+<img src="https://i.imgur.com/Lap4wOb.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "Apply", and click "Ok".
+
+<p align="center">
+<img src="https://i.imgur.com/ZsRVbQD.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "Ok"
+
+
+
+
+
+
+
+
+
 
 
 
