@@ -25,9 +25,9 @@ https://drive.google.com/drive/folders/1mKAD1ZaP1e3F0FInXuAlQ3Pcucz4Mb3O?usp=sha
  - Create a Resource Group
  - Create an Azure Virtual Machine
  - Install and enable IIS (Internet Information Services)
- - HeidiSQL
- - MySQL
- - OsTicket
+ - Downlaod and install "PHPManagerForIIS_V1.5.0.msi"
+ - Download and install "rewrite_amd64_en-US.msi"
+ - Create the "C\PHP" directory
  - PHP Manager
  - php
  - Rewrite
@@ -45,13 +45,13 @@ Go to your Azure portal https://portal.azure.com/ and login. In your Azure home 
 <img src="https://i.imgur.com/q30fcm3.png" height="80%" width="80%" alt="img"/>
 </p>
 
-Click "Create" tab at the top left.
+Click the "Create" tab at the top left.
 
 <p align="center">
 <img src="https://i.imgur.com/G0iY3xD.png" height="80%" width="80%" alt="img"/>
 </p>
 
-Select your Azure subscription, we will name the resource group "RG-osTicket". Select "(US) West US 3" for the Region, and click "Review + create" tab at the bottom left. 
+Select your Azure subscription, we will name the resource group "RG-osTicket". Select "(US) West US 3" for the Region, and click the "Review + create" tab at the bottom left. 
 
 <p align="center">
 <img src="https://i.imgur.com/kaWmyCc.png" height="80%" width="80%" alt="img"/>
@@ -173,7 +173,7 @@ Click "Search without your data" > "Don't allow" > "Confirm and continue" > "Con
 <img src="https://i.imgur.com/rk6m5EW.png" height="80%" width="80%" alt="img"/>
 </p>
 
-Paste the link you copied in the search bar and press the Enter key.
+Paste the link you copied in the search bar and press the Enter key. We will come back to this page later.
 
 We will now install and enable IIS
 
@@ -181,7 +181,7 @@ We will now install and enable IIS
 <img src="https://i.imgur.com/xvSMNcH.png" height="80%" width="80%" alt="img"/>
 </p>
 
-NOTE: Internet Information Services (IIS) is a web server that osTicket runs on. IIS is created by Microsoft that and can be used to host a wide variety of websites and web applications.
+NOTE: Internet Information Services (IIS) is a web server that osTicket runs on. Microsoft created IIS, and it can be used to host a wide variety of websites and web applications.
 
 Right-click the Start Menu and click "Run".
 
@@ -228,22 +228,76 @@ The image above shows that the IIS web services are being installed.
 IIS is now installed, click the "Close" button.
 
 <p align="center">
-<img src="https://i.imgur.com/Qx022SW.png" height="80%" width="80%" alt="img"/>
+<img src="https://i.imgur.com/7Ijcz0x.png" height="80%" width="80%" alt="img"/>
 </p>
 
-Let's confirm that IIS is installed on our VM. Open Microsoft Edge and search for "127.0.0.1"
+To confirm if IIS was actually installed on our VM, open Microsoft Edge, search for "127.0.0.1" on the search bar, and click Enter.
 
+NOTE: "127.0.0.1" is the loopback address, which is a special IP address that maps to the local computer. It's essentially saying, "Try to load a webpage that's running off myself". So, it loaded the default IIS website, which confirms that the webservices are working.
 
+If it loads a page like the one in the image above, it means the installation was successful.
 
+<p align="center">
+<img src="https://i.imgur.com/EppfODe.png" height="80%" width="80%" alt="img"/>
+</p>
 
+Next, we will download and install "PHPManagerForIIS_V1.5.0.msi".
 
+Go back to the osTicket installation files web page, and click "PHPManagerForIIS_V1.5.0.msi".
 
+<p align="center">
+<img src="https://i.imgur.com/mgAXtVg.png" height="80%" width="80%" alt="img"/>
+</p>
 
+Click "Download".
 
+<p align="center">
+<img src="https://i.imgur.com/pCPkNq1.png" height="80%" width="80%" alt="img"/>
+</p>
 
+Disregard the warning and click "Download Anyway".
 
+<p align="center">
+<img src="https://i.imgur.com/cWtF26W.png" height="80%" width="80%" alt="img"/>
+</p>
 
+After it's downloaded, double-click "File Explore" in the taskbar.
 
+<p align="center">
+<img src="https://i.imgur.com/7b7NSYM.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Click "Downloads" and double-click "PHPManagerForIIS_V1.5.0". PHPManagerForIIS_V1.5.0 installation window will pop up. Click "Next" > select "I Agree" and click "Next" > "Close".
+
+Close File Explorer.
+
+<p align="center">
+<img src="https://i.imgur.com/YLRxOsU.png" height="80%" width="80%" alt="img"/>
+</p>
+
+If you can't download any of the files, click the down arrow in the search bar, select "continue allowing automatic downloads of multiple files", and click "Done".
+
+Go back to the osTicket installation files web page and download "rewrite_amd64_en-US.msi" just as we did for "PHPManagerForIIS_V1.5.0".
+
+NOTE: The "rewrite_amd64_en-US.msi" allows osTicket to use URL rewriting. URL rewriting is a technique that allows us to change the way that URLs are displayed to users.
+
+<p align="center">
+<img src="https://i.imgur.com/GXvIgT5.png" height="80%" width="80%" alt="img"/>
+</p>
+
+After it's downloaded, click "File Explore" in the taskbar. Double-click "rewrite_amd64_en-US", check the license agreement box, and click "Next" > "Install" > "Finish".
+
+<p align="center">
+<img src="https://i.imgur.com/CwWRA0w.png" height="80%" width="80%" alt="img"/>
+</p>
+
+Let's Create the "C\PHP" directory.
+
+Open File Explorer, click "This PC", double-click "Windows C:" 
+
+<p align="center">
+<img src="https://i.imgur.com/CwWRA0w.png" height="80%" width="80%" alt="img"/>
+</p>
 
 
 
